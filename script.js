@@ -3,7 +3,8 @@ var fi_line = document.querySelector("#fi-s");
 var se_line = document.querySelector("#se-s");
 var th_line = document.querySelector("#th-s");
 var elem = document.querySelector(".elem");
-
+var main = document.querySelector(".main");
+var sd_bar = document.querySelector(".sd-bar");
 var open_S = false;
 //side bar
 sidebar.addEventListener("click", function(){
@@ -12,16 +13,17 @@ sidebar.addEventListener("click", function(){
     se_line.style.display = "none";
     th_line.style.transform = "rotate(-55deg) translateX(5px)";
     open_S = true;
+    sd_bar.style.display = "block";
     }
     else{
         fi_line.style.transform = "rotate(0deg)";
         se_line.style.display = "block";
         th_line.style.transform = "rotate(0deg)";
         open_S = false; 
+        sd_bar.style.display = "none";
     }
     
 })
-
 
 
 // testimonial slider
@@ -71,11 +73,10 @@ function removeOpen(index1){
         }
     })
 }
-//pages changee in phone size
 
 
 //icon change and translate
-const trigger = document.querySelectorAll(".bottom-bar i");
+const trigger = document.querySelectorAll(".bottom-bar a i");
 const text = document.querySelectorAll(".text");
 trigger.forEach((menu)=> menu.addEventListener("click", toggle));
 
@@ -88,15 +89,8 @@ function toggle(){
     }
 }
 
-// sidebar open
-sidebar.addEventListener("click",function(){
-    elem.style.display = "block";
-    // elem.style.opacity = 1;
-})
-sdClosebtn.addEventListener("click",function(){
-    elem.style.display = "none";
-})
-setTimeout(function(){
-    preloader2.style.transform = "translateX(-100%)";
-    preloader2.style.display = "none";
-},2000);
+
+// setTimeout(function(){
+//     preloader2.style.transform = "translateX(-100%)";
+//     preloader2.style.display = "none";
+// },2000);
