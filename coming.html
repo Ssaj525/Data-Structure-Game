@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <!-- npx tailwindcss -i ./src/input.css -o ./src/output.css --watch -->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TSRTC VIRTUAL CARD</title>
+        <meta name="description"h-0  content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="./Jignasa project/imgs/logo.png">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="css/main.css">
+        <style>
+          .active{
+            background-color: white;
+            color: green;
+            margin-bottom: 15px;
+            height: 100px;
+            width: 100px;
+            padding: 10px;
+            border-radius: 50%;
+          }
+        </style>
+    </head>
+    <body class="box-border h-screen w-screen relative md:h-full md:w-screen ">
+      <!-- sidebar -->
+      <div class="bg-white hidden h-screen sd-bar py-20 w-4/5 text-black z-10 right-0 fixed top-0">
+        <a href=""><h3 class="text-black pl-10 my-6 text-3xl hover:underline">Login</h3></a>
+        <a href=""><h3 class="text-black pl-10 my-6 text-3xl hover:underline">Payment Status</h3></a>
+        <a href=""><h3 class="text-black pl-10 my-6 text-3xl hover:underline">Renewal Card</h3></a>
+        <a href=""><h3 class="text-black pl-10 my-6 text-3xl hover:underline">Update Profile</h3></a>
+        <a href=""><h3 class="text-black pl-10 my-6 text-3xl hover:underline">Complain</h3></a>
+        
+      </div>
+      <!-- main -->
+      <div class="bg-black h-full w-full main relative">
+        
+        <!-- navbar -->
+        <div class="navbar bg-black h-16 w-full flex z-10 justify-between items-center px-5 md:px-10 py-4 md:relative fixed top-[0%] ">
+         
+        <div class="left-nav hidden text-white h-full md:flex justify-center items-center gap-5 text-xl cursor-pointer">
+          <a href=""><h3 class="hover:border-b-2">Features</h3></a>
+          <a href=""><h3 class="hover:border-b-2">About Us</h3></a>
+          <a href="contact.html"><h3 class="hover:border-b-2">Contact Us</h3></a>
+          <a href=""><h3 class="hover:border-b-2">Pricing</h3></a>
+        </div>
+        <div class="logo w-[180px] h-16 text-base md:-ml-12 font-semibold flex">
+          <img src="./Jignasa project/imgs/logo.png" class="w-1/2 h-full bg-cover" alt="logo">
+          <h1 class="text-white py-2 text-center">TSRTC VIRTUAL CARD</h1>
+        </div>
+        <div class="right-nav hidden text-white h-full md:flex justify-center items-center gap-5  text-xl cursor-pointer ">
+          <h3 class="hover:border-b-2">Login</h3>
+          <input type="submit" value="Apply for free" name="name" class="bg-white rounded-md w-36 h-10 text-black px-4 py-1 text-base font-medium font-sans  cursor-pointer">
+        </div>
+        <div class="hamburger h-12 w-12 mr-3 md:hidden transition-all cursor-pointer">
+          <div  id="fi-s" class="w-4/6 bg-white transition-all  h-1 rounded-md mt-2"></div>
+          <div id="se-s"  class="w-4/6 bg-white transition-all h-1  rounded-md mt-2"></div>
+          <div  id="th-s" class="w-4/6 bg-white transition-all  h-1 rounded-md mt-2"></div>
+        </div>
+        </div>
+
+        <!-- hero-section -->
+        <div class="hero-section h-[830px] md:h-[900px] mt-10 md:mt-0 flex items-center justify-center relative bg-white flex-col pt-5 my-8">
+          <h2 class="font-sans text-green-600 text-3xl font-bold md:font-normal md:text-8xl text-center md:leading-[100px] pt-3">Sorry for the Problem <br><span class="font-sans text-green-400">This page will be Coming Soon.</span></h2>
+          <br>
+          <p class="font-sans text-white w-4/5 text-lg md:text-2xl text-center">
+            No more hassle taking your bus pass in your pockets. Try Tsrtc virtual card, make your life easy
+          </p>
+             
+          </div>
+   
+        </div>
+
+
+        <!-- nav bottom -->
+        <div class="bottom-bar w-full h-16 rounded-se-2xl rounded-ss-2xl bg-emerald-500 text-emerald-900 z-10 flex items-center space-x-16 justify-center fixed bottom-[0%] md:hidden">
+         <a href="#"><i class="ri-home-3-line text-3xl active"></i></a>
+          <a href="#"><i class="ri-coupon-line text-3xl"></i></a>
+          <a href="#"><i class="ri-message-2-line text-3xl"></i></a>
+          <a href="#"><i class="ri-user-3-line text-3xl"></i></a>
+        </div>
+        <!-- footer -->
+        <div class="footer text-white hidden md:flex p-11 w-full h-[300px] bg-black "> 
+          <div class="info w-1/4">
+              <div class="box">
+          <div class="logo">
+              <img src="./Jignasa project/imgs/logo.png" class="w-28 h-28" alt="">
+          </div>
+              <h2 class="font-bold text-2xl mb-4">TSRTC Virtual Pass</h2>
+           </div>
+          <h4>TSRTC Virtual Pass Helps in Enhancing your <br>Travel Experience With RTC Busses.</h4>
+          </div>
+          <div class="r-container w-3/4 flex justify-between p-8">
+              <div class="small-cont">
+                  <h2 class="font-bold text-lg">Company</h2>
+              <ul>
+                  <li><a href="#" class="hover:border-b-2">Features</a></li>
+                  <li><a href="#" class="hover:border-b-2">Pricing</a></li>
+                  <li><a href="#" class="hover:border-b-2">Terms</a></li>
+                  <li><a href="#" class="hover:border-b-2">Privacy</a></li>
+              </ul>
+          </div>
+              <div class="small-cont">
+                  <h2 class="font-bold text-lg">Help</h2>
+              <ul>
+                  <li><a href="#" class="hover:border-b-2">Contact Us</a></li>
+                  <li><a href="#" class="hover:border-b-2">Complain</a></li>
+                  <li><a href="#" id="feedback" class="hover:border-b-2">Feedback</a></li>
+                  <li><a href="#" class="hover:border-b-2">Buy Us a Coffee☕</a></li>
+              </ul>
+          </div>
+              <div  class="small-cont">
+                  <h2 class="font-bold text-lg">Socials</h2>
+              <ul>
+                 <li><i class="ri-youtube-fill"></i></li>
+                 <li><i class="ri-twitter-x-line"></i></li>
+                 <li><i class="ri-instagram-line"></i></li>
+                  
+              </ul>
+          </div>
+          </div>
+      </div>
+          <div class="h-1 w-5/6 bg-white ml-[10%]"></div>
+          <div class="hidden copyrights text-white w-full h-10 bg-black md:flex justify-center items-center space-x-3 ">
+              <i class="ri-copyright-line"></i>
+              <h2 class="text-center">Copyrights 2023. All Rights Reserved by S.A CodingJade.</h2>
+          </div>
+          <div class="md:hidden w-full h-40 bg-white  ">
+              
+          </div>
+          <!-- footer end -->
+
+
+
+
+
+
+      </div>
+    </body>
+</html>
