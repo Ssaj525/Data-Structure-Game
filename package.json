@@ -1,0 +1,23 @@
+{
+  "name": "vs-code-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "build": "tailwindcss -i ./input.css -o ./css/main.css",
+    "watch": "tailwindcss -i ./input.css -o ./css/main.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.9"
+  },
+  "dependencies": {
+    "remixicon": "^3.5.0",
+    "sheryjs": "^1.0.0-beta.0.0.4"
+  }
+}
