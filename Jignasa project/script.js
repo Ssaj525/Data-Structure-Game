@@ -1,27 +1,30 @@
-var sidebar = document.querySelector("#side-bar");
-var sdClosebtn = document.querySelector("#sd-close-btn");
+var sidebar = document.querySelector(".hamburger");
+var fi_line = document.querySelector("#fi-s");
+var se_line = document.querySelector("#se-s");
+var th_line = document.querySelector("#th-s");
 var elem = document.querySelector(".elem");
-var preloader2 = document.querySelector(".preloader");
-var preloader = document.querySelector(".pre-loader");
-var homepage = document.querySelector(".home");
-var epasspg = document.querySelector(".epasspg");
-var chatbotpg = document.querySelector(".chatbotpg");
-var profilepg = document.querySelector(".propg");
-var renewalpg = document.querySelector(".renewalpg");
-var updatepg = document.querySelector(".updatepg");
-var epass = document.querySelector("#epass");
-var help = document.querySelector("#help");
-var home = document.querySelector("#home");
-var profile = document.querySelector("#profile");
-var openbtn = document.querySelector(".back");
-var feedback = document.querySelector("#feedback");
-var cls = document.querySelector("#close-btn");
-var feedbackResp = document.querySelector(".back");
-var openfeed = document.querySelector("#feedback");
-
-openfeed.addEventListener("click", function(){
-    feedbackResp.style.display = "block";
+var main = document.querySelector(".main");
+var sd_bar = document.querySelector(".sd-bar");
+var open_S = false;
+//side bar
+sidebar.addEventListener("click", function(){
+    if(open_S == false){
+    fi_line.style.transform = "rotate(55deg) translateX(8px) translateY(2px)";
+    se_line.style.display = "none";
+    th_line.style.transform = "rotate(-55deg) translateX(5px)";
+    open_S = true;
+    sd_bar.style.display = "block";
+    }
+    else{
+        fi_line.style.transform = "rotate(0deg)";
+        se_line.style.display = "block";
+        th_line.style.transform = "rotate(0deg)";
+        open_S = false; 
+        sd_bar.style.display = "none";
+    }
+    
 })
+
 
 // testimonial slider
 var swiper = new Swiper(".mySwiper", {
@@ -41,27 +44,6 @@ var swiper = new Swiper(".mySwiper", {
         prevEl: ".swiper-button-prev",
       },
   });
-
-
-
-// open feedback
-
-// cls.addEventListener("click", function(){
-//     openbtn.style.display = "none";
-// })
-
-// feedback.addEventListener("click", function(){
-//     openbtn.style.opacity = 1;
-//     feedback.style.pointerEvents = all;
-// })
-
-
-
-
-
-
-
-
 
 //faq script
 const accordionContent = document.querySelectorAll(".contentbx");
@@ -93,35 +75,8 @@ function removeOpen(index1){
 }
 
 
-
-//pages changee in phone size
-epass.addEventListener("click",function(){
-    homepage.style.display="none";
-    chatbotpg.style.display="none";
-    profilepg.style.display="none";
-    epasspg.style.display = "block";
-})
-home.addEventListener("click",function(){
-    epasspg.style.display="none";
-    homepage.style.display = "block";
-    chatbotpg.style.display="none";
-    profilepg.style.display="none";
-})
-help.addEventListener("click",function(){
-    homepage.style.display="none";
-    epasspg.style.display="none";
-    profilepg.style.display="none";
-    chatbotpg.style.display = "block";
-})
-profile.addEventListener("click",function(){
-    homepage.style.display="none";
-    chatbotpg.style.display="none";
-    epasspg.style.display="none";
-    profilepg.style.display = "block";
-})
-
 //icon change and translate
-const trigger = document.querySelectorAll(".bottom-bar i");
+const trigger = document.querySelectorAll(".bottom-bar a i");
 const text = document.querySelectorAll(".text");
 trigger.forEach((menu)=> menu.addEventListener("click", toggle));
 
@@ -134,15 +89,8 @@ function toggle(){
     }
 }
 
-// sidebar open
-sidebar.addEventListener("click",function(){
-    elem.style.display = "block";
-    // elem.style.opacity = 1;
-})
-sdClosebtn.addEventListener("click",function(){
-    elem.style.display = "none";
-})
-setTimeout(function(){
-    preloader2.style.transform = "translateX(-100%)";
-    preloader2.style.display = "none";
-},2000);
+
+// setTimeout(function(){
+//     preloader2.style.transform = "translateX(-100%)";
+//     preloader2.style.display = "none";
+// },2000);
