@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Structure Steps</title>
+<style>
+  #stepsContainer {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    animation: slidein 1s;
+  }
+
+  @keyframes slidein {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Additional styling for step elements */
+  #stepsContainer > div {
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+  }
+</style>
+</head>
+<body>
+
+<button id="stackBtn">Stack</button>
+<button id="queueBtn">Queue</button>
+<div id="stepsContainer"></div>
+
+<script>
+const dataStructureSteps = {
+  "stack": {
+    "steps": [
+      "Step 1: Initialize the stack",
+      "Step 2: Push an element onto the stack",
+      "Step 3: Pop an element from the stack",
+      // More steps...
+    ]
+  },
+  "queue": {
+    "steps": [
+      "Step 1: Initialize the queue",
+      "Step 2: Enqueue an element into the queue",
+      "Step 3: Dequeue an element from the queue",
+      // More steps...
+    ]
+  },
+  // Add more data structures as needed...
+};
+
+// Function to display steps
+function displaySteps(steps) {
+  const stepsContainer = document.getElementById("stepsContainer");
+  stepsContainer.innerHTML = ""; // Clear previous steps
+
+  steps.forEach((step, index) => {
+    const stepElement = document.createElement("div");
+    stepElement.textContent = `Step ${index + 1}: ${step}`;
+    stepsContainer.appendChild(stepElement);
+  });
+}
+
+// Event listeners for buttons
+document.getElementById("stackBtn").addEventListener("click", function() {
+  const stackSteps = dataStructureSteps.stack.steps;
+  displaySteps(stackSteps);
+});
+
+document.getElementById("queueBtn").addEventListener("click", function() {
+  const queueSteps = dataStructureSteps.queue.steps;
+  displaySteps(queueSteps);
+});
+</script>
+
+</body>
+</html>
