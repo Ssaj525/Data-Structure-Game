@@ -10,7 +10,7 @@
 <body>
     <div class="main w-full h-screen px-2">
         <div class="nav w-full h-[58px] mt-1 flex items-center justify-between mb-1 px-1">
-            <div class="setting w-12 h-12 rounded-full bg-slate-200 flex flex-col gap-1 items-center justify-center">
+            <div class="back w-12 h-12 rounded-full bg-slate-200 flex flex-col gap-1 items-center justify-center">
                 
             </div>
             <div class="logo text-xl uppercase text-center font-bold leading-5 font-[gilroy]">
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="options w-full h-[60%]">
-            <h2 class="text-3xl mb-4 ml-1 font-[gilroy] leading-7 font-semibold">Insertion <br>Operation on Array</h2>
+            <h2 class="text-3xl mb-4 ml-1 font-[gilroy] leading-7 font-semibold"></h2>
             <div class="rec-ctn w-full h-[80%] overflow-hidden relative">
                 <!-- Multiple rec elements for different recipes -->
                 <div class="rec w-full h-full rounded-3xl flex-shrink-0 overflow-hidden">
@@ -42,9 +42,9 @@
                     <h1 class="text-[22px] font-bold pl-3">Steps To Follow</h1>
                     <div class="steps-slider h-[80%] mt-1 w-full flex flex-col pt-3 px-3 text-lg relative">
                         <!-- Multiple f-step elements for different steps -->
-                        <div class="f-step leading-5 font-semibold">1: Check Whether the Array is Empty or not <br> condition: (check top == -1)</div>
+                        <!-- <div class="f-step leading-5 font-semibold">1: Check Whether the Array is Empty or not <br> condition: (check top == -1)</div>
                         <div class="f-step leading-5 font-semibold">2: Next step description here...</div>
-                        <div class="f-step leading-5 font-semibold">3: Next step description here...</div>
+                        <div class="f-step leading-5 font-semibold">3: Next step description here...</div> -->
                         <!-- Add more f-step elements as needed -->
                     </div>
                 </div>
@@ -57,90 +57,6 @@
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const recCtn = document.querySelector('.rec-ctn');
-            const recs = document.querySelectorAll('.rec');
-            const stepsSlider = document.querySelector('.steps-slider');
-            const steps = document.querySelectorAll('.f-step');
-            const indicators = document.querySelectorAll('.indicator .circle');
-
-            let currentRecIndex = 0;
-            let currentStepIndex = 0;
-            let startX = 0;
-            let endX = 0;
-            let isDragging = false;
-
-            function updateIndicators(index) {
-                indicators.forEach((circle, i) => {
-                    circle.classList.toggle('c-active', i === index);
-                });
-            }
-
-            function showRec(index) {
-                recs.forEach((rec, i) => {
-                    if (i === index) {
-                        rec.classList.add('active');
-                        rec.style.transform = 'translateX(0)';
-                    } else if (i < index) {
-                        rec.classList.remove('active');
-                        rec.style.transform = 'translateX(-100%)';
-                    } else {
-                        rec.classList.remove('active');
-                        rec.style.transform = 'translateX(100%)';
-                    }
-                });
-                updateIndicators(index);
-            }
-
-            function showStep(index) {
-                steps.forEach((step, i) => {
-                    if (i === index) {
-                        step.classList.add('active');
-                        step.style.transform = 'translateX(0)';
-                    } else if (i < index) {
-                        step.classList.remove('active');
-                        step.style.transform = 'translateX(-100%)';
-                    } else {
-                        step.classList.remove('active');
-                        step.style.transform = 'translateX(100%)';
-                    }
-                });
-            }
-
-            recCtn.addEventListener('touchstart', (e) => {
-                startX = e.touches[0].clientX;
-                isDragging = true;
-            });
-
-            recCtn.addEventListener('touchmove', (e) => {
-                if (isDragging) {
-                    endX = e.touches[0].clientX;
-                }
-            });
-            
-
-            recCtn.addEventListener('touchend', () => {
-                if (isDragging) {
-                    isDragging = false;
-                    if (startX > endX + 50) {
-                        // Swipe left
-                        currentRecIndex = (currentRecIndex + 1) % recs.length;
-                        currentStepIndex = (currentStepIndex + 1) % steps.length;
-                    } else if (startX < endX - 50) {
-                        // Swipe right
-                        currentRecIndex = (currentRecIndex - 1 + recs.length) % recs.length;
-                        currentStepIndex = (currentStepIndex - 1 + steps.length) % steps.length;
-                    }
-                    showRec(currentRecIndex);
-                    showStep(currentStepIndex);
-                }
-            });
-
-            // Initialize the first rec and step to be visible
-            showRec(currentRecIndex);
-            showStep(currentStepIndex);
-        });
-    </script>
+    <script src="operation.js"></script>
 </body>
 </html>
